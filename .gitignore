@@ -1,0 +1,4 @@
+# Credenciais locais nunca devem ser incluídas no repositório.
+/backend/config.php
+/backend/.env
+/backend/node_modules/

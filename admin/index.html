@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- O tema escuro e as cores seguem a identidade visual existente do site. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f0e0e">
+    <title>Administração | Roblox Family</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/admin/admin.css">
+</head>
+
+<body>
+    <!-- O mesmo letreiro animado é reutilizado sem alterar sua arte ou animação. -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="wrapper">
+                    <svg>
+                        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                            Roblox Family-x4
+                        </text>
+                    </svg>
+                </div>
+            </div>
+            <div class="admin-nav">
+                <a href="/index.html">Página Inicial</a>
+                <a href="/frontend/index.html">Bate-papo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- O login e o painel são alternados pelo script após validar o papel no backend. -->
+    <main class="admin-container">
+        <section class="admin-login" aria-labelledby="admin-title">
+            <h1 id="admin-title">Área administrativa</h1>
+            <p>Entre com a conta de administrador para moderar as sessões do chat.</p>
+            <form class="admin-login-form">
+                <label for="admin-email">E-mail</label>
+                <input id="admin-email" name="email" type="email" autocomplete="username" maxlength="254" required>
+                <label for="admin-password">Senha</label>
+                <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <button class="admin-logout" type="button" hidden>Sair da conta</button>
+            <p class="admin-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <!-- Lista de contas, sessões ativas e controles de moderação. -->
+        <section class="admin-dashboard" aria-labelledby="participants-title" hidden>
+            <header class="dashboard-header">
+                <div>
+                    <h1 id="participants-title">Participantes do bate-papo</h1>
+                    <p class="dashboard-summary">As sessões ativas são atualizadas automaticamente.</p>
+                </div>
+                <button class="dashboard-logout" type="button">Sair</button>
+            </header>
+            <div class="participants" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="/admin/admin.js" defer></script>
+</body>
+
+</html>

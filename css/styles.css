@@ -1,7 +1,7 @@
-    
+    /* Paleta e regras gerais compartilhadas pelas páginas públicas. */
     @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
     
-    /* Remove the navbar's default margin-bottom and rounded borders */
+    /* Mantém o menu alinhado ao restante do cabeçalho. */
     body{
         background-color: rgba(0, 0, 0, 0.89);
     }
@@ -53,7 +53,7 @@
         margin: 10px;
        
     }
-    /*meio do site*/
+    /* Área central de apresentação e vídeos da página inicial. */
     .main-title{    
         color: aliceblue;
     }
@@ -68,7 +68,7 @@
         margin: 5px;
         border-radius: 10px;
     }
-    /* Add a gray background color and some padding to the footer */
+    /* Rodapé escuro com contraste suficiente para o texto claro. */
     footer {
         display: flex;
         align-items: center;
@@ -94,7 +94,7 @@
   }
   
 
-/*Letreiro animado teste*/
+/* Regras tipográficas associadas ao letreiro; a animação do logotipo é preservada. */
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
 svg {
@@ -122,8 +122,8 @@ svg text {
 }
 
 
-/*pagina de Galeria*/
-.container{
+/* Layout específico da galeria de vídeos. */
+.gallery-container{
     width: 100%;
     height: 82vh;   
     display: flex;

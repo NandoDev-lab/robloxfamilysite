@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Metadados e folhas que definem a identidade visual compartilhada do site. -->
     <title>Roblox Family Site</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,7 @@
 </head>
 
 <body>
-    <!--Barra de navegação-->
+    <!-- Navegação principal para as páginas públicas, o chat e a administração. -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -20,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--letreiro animado-->
+                <!-- Mantém o letreiro SVG e a animação CSS original do logotipo. -->
                 <div class="wrapper">
                     <svg>
                         <text x="50%" y="50%" dy=".35em" text-anchor="middle">
@@ -36,13 +37,14 @@
                     <li><a href="/frontend/index.html">Bate Papo</a></li>
                     <li><a href="/galeria.html">Nossos Vídeos</a></li>
                     <li><a href="/contato.html">Fale Conosco</a></li>
+                    <li><a href="/admin/index.html">Administração</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!--Fim da Barra de navegação-->
+    <!-- Fim da navegação principal. -->
 
-    <!--Corpo do Site-->
+    <!-- Destaque de boas-vindas e acesso rápido à galeria. -->
     <div class="jumbotron">
         <div class="mensagem">
             <h1 class="display-4">Olá, Pessoal</h1>
@@ -53,8 +55,9 @@
             <a class="btn btn-primary btn-lg" href="/galeria.html" role="button">Galeria</a>
         </div>
     </div>
+    <!-- Conteúdo inicial: quiz à esquerda e apresentação do canal ao centro. -->
     <div class="conteudo">
-        <div class="sidebar"><!--inicio da sidebar-->
+        <div class="sidebar">
             <div class="container mt-5 ">
                 <h1>Quiz </h1>
                 <form id="quiz-form">
@@ -74,7 +77,7 @@
                 <div id="result" class="mt-3"></div>
             </div>
             <hr>
-        </div><!--fim da sidebar-->
+        </div>
 
         <div class="main">
 
@@ -92,6 +95,7 @@
                 nós gravássemos.
             </p>
             <h3 class="main-title">Confira abaixo nossos videos mais visitados:</h3>
+            <!-- Vídeos incorporados diretamente do canal no YouTube. -->
             <div class="principais">
                 <iframe class="video" width="560" height="315"
                     src="https://www.youtube.com/embed/u7GOK4YAj5s?si=1n3hCaY2lw4x4N_I" title="YouTube video player"
@@ -112,7 +116,7 @@
         </div>
         <div class="sidebar"></div>
     </div>
-    <!--Fim do Corpo do Site-->
+    <!-- Rodapé e scripts do quiz e do widget externo. -->
 
     <footer class="container-fluid text-center">
         <p class="developer"><a href="https://github.com/NandoDev-lab">Criado por NandoDev</a></p>
@@ -121,6 +125,7 @@
 
     <script
         type="text/javascript"> document.umnicoWidgetHash = '6016ffa5f3666caa0ad47ccb125e2056'; var x = document.createElement('script'); x.src = 'https://umnico.com/assets/widget-loader.js'; x.type = 'text/javascript'; x.charset = 'UTF-8'; x.async = true; document.body.appendChild(x); </script>
+    <script src="/js/script.js"></script>
 
 </body>
 

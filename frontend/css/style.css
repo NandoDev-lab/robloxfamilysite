@@ -1,3 +1,4 @@
+/* Base local do chat; não altera a folha compartilhada nem a animação do logotipo. */
 *{
     margin: 0;
     padding: 0;
@@ -7,21 +8,28 @@
 :root{
     font-size: 16px;
 }
+[hidden]{
+    display: none !important;
+}
 body{
-    background-image: url('/css/styles.css');
+    background-image: url('/frontend/images/bkg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     color: aliceblue;
 }
-.container{
+.chat-container{
     background-color: rgba(0, 0, 0, 0.205);
     width: 100%;
-    height: 100dvh;
+    min-height: calc(100dvh - 80px);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    align-content: center;
+    gap: 1rem;
+    padding: 1rem;
 }
-/*area de login*/
+/* Cartão de autenticação e formulários de login/cadastro. */
 .login{
     width: 100%;
     max-width: 330px;
@@ -42,6 +50,15 @@ body{
     flex-direction: column;
     gap: 15px;
 
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.login label{
+    color: aliceblue;
+    font-weight: 600;
 }
 .login-input{
     border: none;
@@ -67,53 +84,93 @@ body{
 .login-button:hover{
     background-color: rgb(253, 253, 253);
 }
-/*area de Chat*/
+.login-button:disabled,
+.chat-button:disabled,
+.logout-button:disabled,
+.auth-switch:disabled{
+    cursor: wait;
+    opacity: .65;
+}
+.auth-switch,
+.logout-button{
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 5px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    color: aliceblue;
+    background: rgba(13, 13, 14, .75);
+    cursor: pointer;
+}
+.auth-message{
+    margin: 12px 0 0;
+    overflow-wrap: anywhere;
+}
+/* Estrutura do chat, cabeçalho e campo fixo dentro do cartão responsivo. */
 
 .chat{
     background-color: rgba(13, 13, 14, 0.514);
-    width: 60%;
-    height: 100%;
+    width: min(100%, 800px);
+    height: min(70vh, 700px);
+    min-height: 360px;
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 5px;
+}
+.chat-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, .55);
+}
+.chat-user{
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.logout-button{
+    flex: 0 0 auto;
+    margin: 0;
 }
 .chat-messages{
     width: 100%;
     height: 100%;   
     flex-grow: 1;
-    padding: 30px 30px 90px 30px;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
 }
 .chat-form{
-    width: 50%;
+    width: 100%;
     background-color: black;
     padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    position: fixed;
-    bottom: 0;
-
 }
 .chat-input{
-    width: 80%;
+    width: 100%;
     height: 40px;
+    flex: 1;
 }
 .chat-button{
     width: 40px;
     height: 40px;
 }
-/*mensagem do chat*/
+/* Balões distinguem as mensagens próprias das recebidas. */
 
 .chat-messages > div{
     width: 100%;
     padding: 10px;
-    max-width: 250px;   
-    font-size: 26px;
+    max-width: 75%;
+    overflow-wrap: anywhere;
+    font-size: 1.1rem;
     font-weight: bolder;
     margin-bottom: 15px;
     line-height: 22px;
@@ -144,4 +201,25 @@ body{
 
 }
 
-/*fim mensagem do chat*/
+.chat-status{
+    width: 100%;
+    max-width: 800px;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 600px){
+    .chat{
+        height: 70vh;
+    }
+
+    .chat-messages{
+        padding: 16px;
+    }
+
+    .chat-messages > div{
+        max-width: 90%;
+    }
+}
+
+/* Fim dos estilos dos balões de mensagem. */

@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Recursos visuais do chat e componentes comuns da navegação. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
@@ -13,7 +14,7 @@
 </head>
 
 <body>
-    <!--Barra de navegação-->
+    <!-- Navegação pública; o painel valida a permissão administrativa no servidor. -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -22,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--letreiro animado-->
+                <!-- Preserva o SVG e a animação CSS original do logotipo. -->
                 <div class="wrapper">
                     <svg>
                         <text x="50%" y="50%" dy=".35em" text-anchor="middle">
@@ -38,37 +39,54 @@
                     <li><a href="/frontend/index.html">Bate Papo</a></li>
                     <li><a href="/galeria.html">Nossos Vídeos</a></li>
                     <li><a href="/contato.html">Fale Conosco</a></li>
+                    <li><a href="/admin/index.html">Administração</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!--Fim da Barra de navegação-->
+    <!-- Fim da navegação. -->
 
-    <section class="container">
+    <!-- Login e cadastro usam endpoints PHP e uma sessão persistida no servidor. -->
+    <section class="chat-container">
         <section class="login">
-            <h2>Login</h2>
+            <h2 class="auth-title">Entrar no bate-papo</h2>
             <form class="login-form">
-                <input type="text" class="login-input" placeholder="Seu Nome" required>
+                <label for="auth-email">E-mail</label>
+                <input id="auth-email" name="email" type="email" class="login-input" placeholder="seu@email.com" maxlength="254" autocomplete="email" required>
+                <label for="auth-password">Senha</label>
+                <input id="auth-password" name="password" type="password" class="login-input" placeholder="Sua senha" minlength="10" maxlength="72" autocomplete="current-password" required>
                 <button type="submit" class="login-button">Entrar</button>
             </form>
+            <form class="register-form" hidden>
+                <label for="register-name">Nome no chat</label>
+                <input id="register-name" name="username" type="text" class="login-input" maxlength="24" minlength="3" autocomplete="nickname" required>
+                <label for="register-email">E-mail</label>
+                <input id="register-email" name="email" type="email" class="login-input" maxlength="254" autocomplete="email" required>
+                <label for="register-password">Senha (10 a 72 bytes)</label>
+                <input id="register-password" name="password" type="password" class="login-input" minlength="10" maxlength="72" autocomplete="new-password" required>
+                <button type="submit" class="login-button">Criar conta</button>
+            </form>
+            <button type="button" class="auth-switch">Criar uma conta</button>
+            <p class="auth-message" role="status" aria-live="polite"></p>
         </section>
 
+        <!-- A área do chat só aparece após a autenticação ser confirmada. -->
         <section class="chat">
+            <header class="chat-header">
+                <p class="chat-user"></p>
+                <button type="button" class="logout-button">Sair</button>
+            </header>
             <section class="chat-messages">
-
-                <!-- <div class="message-self"></div>
-                     <div class="Admin"></div>
-
-                <div class="message-other"></div>-->
-
             </section>
             <form class="chat-form">
-                <input type="text" class="chat-input" placeholder="Digite aqui sua mensagem" required>
-                <button type="submit" class="chat-button"><span class="material-symbols-outlined">
+                <input type="text" class="chat-input" placeholder="Digite aqui sua mensagem" maxlength="500" required>
+                <button type="submit" class="chat-button" aria-label="Enviar mensagem"><span class="material-symbols-outlined">
                         send
                     </span></button>
             </form>
         </section>
+        <!-- Mensagens de conexão e moderação são anunciadas também por leitores de tela. -->
+        <p class="chat-status" role="status" aria-live="polite"></p>
     </section>
 
     <script src="/frontend/js/script.js"></script>

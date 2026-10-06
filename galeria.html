@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+  <!-- Estilos e componentes responsivos usados pela página de vídeos. -->
   <title>Galeria de Vídeos</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +14,7 @@
 
 <body>
 
+  <!-- Navegação do site; o atalho do logotipo conserva a arte já existente. -->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -21,7 +23,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <!--letreiro animado-->
+        <!-- Preserva o letreiro SVG animado do logotipo. -->
         <div class="wrapper">
           <svg>
             <text x="50%" y="50%" dy=".35em" text-anchor="middle">
@@ -38,14 +40,16 @@
           <li><a href="/frontend/index.html">Bate Papo</a></li>
           <li><a href="/galeria.html">Nossos Vídeos</a></li>
           <li><a href="/contato.html">Fale Conosco</a></li>
+          <li><a href="/admin/index.html">Administração</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+          <li><a href="/frontend/index.html"><span class="glyphicon glyphicon-log-in"></span> Entrar no chat</a></li>
         </ul>
       </div>
     </div>
   </nav>
-<div class="container"> <h1>Galeria do Canal</h1>
+<!-- Lista de vídeos publicados pelo canal. -->
+<div class="gallery-container"> <h1>Galeria do Canal</h1>
   <p>Aqui você consegue achar nossos videos sem distrações extras e aquele monte de anúncios da playlistdo youtube  </p>
   <div class="galeria">  
 
@@ -55,6 +59,7 @@
 </div>
 
 
+  <!-- Rodapé compartilhado pelas páginas públicas. -->
   <footer class="container-fluid text-center">
     <p>Footer Text</p>
   </footer>

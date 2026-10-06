@@ -1,0 +1,7 @@
+# Impede a listagem de diretórios no backend.
+Options -Indexes
+
+# Evita que arquivos com credenciais sejam servidos pelo Apache.
+<FilesMatch "^(config\.php|\.env)$">
+    Require all denied
+</FilesMatch>
